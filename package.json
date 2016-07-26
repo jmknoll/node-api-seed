@@ -1,0 +1,47 @@
+{
+  "name": "node-api-seed",
+  "version": "1.0.0",
+  "description": "basic seed project for an api and lightweight cms using node and express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmknoll/node-api-seed.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "seed",
+    "template"
+  ],
+  "author": "jmknoll",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmknoll/node-api-seed/issues"
+  },
+  "homepage": "https://github.com/jmknoll/node-api-seed#readme",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "cron": "^1.1.0",
+    "crypto": "0.0.3",
+    "express": "^4.13.1",
+    "express-jwt": "^3.3.0",
+    "express-unless": "^0.3.0",
+    "jquery": "^2.2.0",
+    "jsonwebtoken": "^5.4.1",
+    "mongoose": "^4.4.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "socket.io": "^1.4.4",
+    "sqlite3": "^3.1.1"
+  },
+  "devDependencies": {
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "gridfs-stream": "^1.1.1",
+    "morgan": "^1.7.0",
+    "multer": "^1.1.0"
+  }
+}
