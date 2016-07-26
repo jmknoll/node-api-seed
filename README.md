@@ -9,7 +9,7 @@ Template for rapidly prototyping web applications using Node, ExpressJS, and Mon
 Public API, namespaced under /api/v1/  
 Routing in /routes/api.js
 
-Admin dashboard CMS, namespaced under /admin
+Admin dashboard CMS, namespaced under /admin/  
 Routing in /routes/admin.js
 
 ##Getting Started

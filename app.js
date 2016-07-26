@@ -2,13 +2,12 @@
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
 // bring the config file back in so that your private key is not in the code
 //var config = require('./config');
 
-
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 
 var passport = require('passport');
 
@@ -17,27 +16,29 @@ require('./config/passport');
 
 
 var apiRoutes = require('./routes/api');
+var adminRoutes = require('./routes/admin');
 
 var app = express();
-var http = require('http').Server(app);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+//var http = require('http').Server(app);
+app.set('port', 8888);
+app.listen(app.get('port'));
+
+
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'app_client')));
 app.use(passport.initialize());
 
 app.use('/api', apiRoutes);
-
-http.listen(8888, function(){
-  console.log('listening on *:8888');
-});
+app.use('/admin', adminRoutes);
 
 
 // catch 404 and forward to error handler
