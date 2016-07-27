@@ -12,8 +12,8 @@ var User = Schema({
   },
   hash: String,
   salt: String,
-  cycles    : [{  type: Schema.Types.ObjectId, 
-            ref: 'Cycle' 
+  races    : [{  type: Schema.Types.ObjectId, 
+            ref: 'Race' 
           }], 
 });
 
@@ -39,5 +39,11 @@ User.methods.generateJwt = function() {
   }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };
 
+var Race = Schema({
+  name: String
+})
+
+
 mongoose.model('User', User);
+mongoose.model('Race', Race);
 mongoose.connect('mongodb://localhost/cecf_horserace')

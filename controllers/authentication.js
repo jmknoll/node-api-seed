@@ -8,6 +8,7 @@ var sendJSONresponse = function(res, status, content) {
 };
 
 module.exports.register = function(req, res) {
+  console.log('Registering new user via API');
 
   // if(!req.body.name || !req.body.email || !req.body.password) {
   //   sendJSONresponse(res, 400, {
@@ -18,12 +19,15 @@ module.exports.register = function(req, res) {
 
   var user = new User();
 
-  user.name = req.body.name;
+  //user.name = req.body.name;
   user.email = req.body.email;
 
   user.setPassword(req.body.password);
 
   user.save(function(err) {
+    if (err) {
+      return res.send(err.message)
+    }
     var token;
     token = user.generateJwt();
     res.status(200);
