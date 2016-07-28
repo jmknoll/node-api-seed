@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const debug = require('debug')('dev')  
+const name = 'node-api-seed'  
+debug('booting %s', name)  
+
+var morgan = require('morgan');
+
 // bring the config file back in so that your private key is not in the code
 //var config = require('./config');
 
@@ -22,7 +28,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 //var http = require('http').Server(app);
 app.set('port', 8888);

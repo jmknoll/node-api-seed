@@ -10,7 +10,14 @@ var path = require('path');
 
 router.get('/', function(req, res){
   console.log('rendering index')
-  res.render('index', {title: 'res vs app render'})
+  res.render('index', {title: 'Admin Dashboard Index Page'}, function(err, html){
+    console.log('results of res.render callback function');
+    res.send(html)
+  })
+})
+
+router.get('/test',  function(res, res){
+  res.send('App is up and running')
 })
 
 router.post('/race/create', function(req, res){

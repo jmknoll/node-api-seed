@@ -35,7 +35,6 @@ module.exports.register = function(req, res) {
       "token" : token
     });
   });
-
 };
 
 module.exports.login = function(req, res) {
